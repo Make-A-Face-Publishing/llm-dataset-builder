@@ -22,9 +22,9 @@ def index():
 # Route to process the form data and return formatted JSON
 @app.route('/format', methods=['POST'])
 def format_entry():
-    system_prompt = request.form['system_prompt']
-    user_prompts = request.form.getlist('user_prompt[]')
-    assistant_responses = request.form.getlist('assistant_response[]')
+    system_prompt = request.form['system_prompt'].replace('\r\n', '\n')
+    user_prompts = [p.replace('\r\n', '\n') for p in request.form.getlist('user_prompt[]')]
+    assistant_responses = [r.replace('\r\n', '\n') for r in request.form.getlist('assistant_response[]')]
     assistant_weights = request.form.getlist('assistant_weight[]')
 
     formatted_entry = {"messages": []}
@@ -47,7 +47,7 @@ def format_entry():
 def save_entry():
     entries = request.json.get('entries', [])
     
-    with open('conversations.jsonl', 'a') as f:
+    with open('conversations.jsonl', 'a', newline='\n') as f:
         for entry in entries:
             json_str = json.dumps(entry, cls=OrderedEncoder)  # Use the custom encoder
             f.write(json_str + '\n')
