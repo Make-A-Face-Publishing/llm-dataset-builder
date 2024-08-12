@@ -7,3 +7,4 @@
 {"messages": [{"role": "system", "content": "SDSDv"}, {"role": "user", "content": "DsvSDv"}, {"role": "assistant", "content": "SDvSDvSDv"}, {"role": "user", "content": "SDvSDvSD"}, {"role": "assistant", "content": "dSDvSDvSDDV", "weight": 0}]}
 {"messages": [{"role": "system", "content": "SDSDv"}, {"role": "user", "content": "DsvSDv"}, {"role": "assistant", "content": "SDvSDvSDv"}, {"role": "user", "content": "SDvSDvSD\r\n\r\nasdgfasdf\r\n\r\nasdfasdf"}, {"role": "assistant", "content": "dSDvSDvSDDV", "weight": 0}]}
 {"messages": [{"role": "system", "content": "sdfsdfg"}, {"role": "user", "content": "sdfgsdfg\nsdfgsdfg\ns\n\nsdfgsdfg\n\nsdfgsdfg"}, {"role": "assistant", "content": "asdgasdfgadfg"}]}
+{"messages": [{"role": "system", "content": "asdfasdf"}, {"role": "user", "content": "asdfasdfasd"}, {"role": "assistant", "content": "asdgasdgasdg"}]}

@@ -48,6 +48,13 @@
             document.getElementById('turns').appendChild(turnDiv);
         }
 
+        function clearTurns() {
+            const turnsDiv = document.getElementById('turns');
+            while (turnsDiv.children.length > 1) {
+                turnsDiv.removeChild(turnsDiv.lastChild);
+            }
+        }
+
         function formatEntry() {
             const formData = new FormData(document.getElementById('entryForm'));
 
@@ -89,6 +96,11 @@
         }
 
         let entries = [];
+
+        // Automatically add the first user-assistant turn when the page loads
+        window.onload = function() {
+            addTurn();
+        };
     </script>
 </head>
 <body>
@@ -102,7 +114,8 @@
         
         <div id="turns"></div>
 
-        <button type="button" onclick="addTurn()">Add User-Assistant Turn</button><br><br>
+        <button type="button" onclick="addTurn()">Add User-Assistant Turn</button>
+        <button type="button" onclick="clearTurns()">Clear Turns</button><br><br>
         <button type="button" onclick="formatEntry()">Submit Entry</button>
     </form>
     
