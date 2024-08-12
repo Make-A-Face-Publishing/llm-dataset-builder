@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine-Tuning Dataset Formatter for OpenAI Chat LLMs</title>
+    <script src="static/script.js" defer></script> <!-- Reference to the external JS file -->
+</head>
+<body>
+    <h1>Dataset Fine-Tuning Formatter for OpenAI Chat Models</h1>
+    
+    <form id="entryForm">
+        <div>
+            <label for="system_prompt">System Prompt:</label><br>
+            <textarea id="system_prompt" name="system_prompt" rows="4" cols="50"></textarea>
+        </div>
+        
+        <div id="turns"></div>
+
+        <button type="button" onclick="addTurn()">Add User-Assistant Turn</button>
+        <button type="button" onclick="clearTurns()">Clear Turns</button><br><br>
+        <button type="button" onclick="formatEntry()">Submit Entry</button>
+    </form>
+    
+    <h2>Formatted Entries</h2>
+    <pre id="formattedEntries"></pre>
+    
+    <button type="button" onclick="downloadFile()">Download JSONL File</button>
+</body>
+</html>
